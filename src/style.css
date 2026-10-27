@@ -1,0 +1,194 @@
+@import "tailwindcss";
+@import "/src/prose.css";
+
+@theme {
+    --breakpoint-*: initial;
+    --breakpoint-sm: 48rem;
+    --breakpoint-md: 62rem;
+    --breakpoint-lg: 75rem;
+
+    --color-site-text-color: #333;
+}
+
+@utility border-t-* {
+  border-top-style: --value("none", "hidden", "groove", "ridge", "inset", "outset", "dashed", "dotted", "solid", "double");
+}
+@utility small-caps {
+  font-variant-caps: small-caps;
+}
+
+@layer base {
+  html {
+    @apply overflow-y-scroll;
+  }
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    @apply text-site-text-color bg-[#eee] text-sm;
+  }
+}
+
+@layer components {
+
+  nav.top-row-menu {
+    --active-text-color: #555;
+    --active-background-color: #e7e7e7;
+    --hover-text-color: #555;
+    --inactive-text-color: #777;
+
+    --li-left-padding: 0.9375rem;
+
+    @apply bg-[#f8f8f8] text-(--inactive-text-color);
+
+    & > ul {
+      @apply flex flex-row flex-wrap justify-start gap-0;
+
+      & > li {
+        @apply h-12.5 pl-(--li-left-padding) pr-3.5 select-none;
+
+        &.menu-head {
+          @apply pr-3.75 text-[1.125rem];
+        }
+
+        &.active {
+          @apply bg-(--active-background-color);
+        }
+
+        &:not(:has(details)) {
+          & > a {
+            @apply block content-center h-full;
+
+            .active > & {
+              @apply text-(--active-text-color);
+            }
+
+            &:hover {
+              @apply text-(--hover-text-color);
+            }
+          }
+        }
+
+        &:has(details) {
+          &:has([open], :popover-open, :open) {
+            @apply bg-(--active-background-color);
+          }
+
+          & > details {
+            @apply relative h-full content-center;
+
+            & > summary {
+              @apply cursor-pointer list-none;
+
+              :is([open], :popover-open, :open) > &, :where(.active > details) > & {
+                @apply text-(--active-text-color);
+              }
+
+              &:hover {
+                @apply text-(--hover-text-color);
+              }
+
+              & > span {
+                @apply inline-flex transition-transform duration-200 translate-y-0.25;
+
+                :is([open], :popover-open, :open) > summary > & {
+                  @apply rotate-180;
+                }
+
+                & > svg {
+                  @apply w-2.75 h-2.75;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    ul.top_dropdown_menu {
+
+      --normal-text-color: #555;
+      --head-text-color: #777;
+      --active-text-color: #fff;
+      --active-background-color: #337ab7;
+      --hover-background-color: #f5f5f5;
+      
+      --left-indent: 0rem;
+      --vertical-indent: 0.1875rem;
+
+      @apply absolute top-full -left-(--li-left-padding) z-50;
+      @apply flex flex-col;
+      @apply py-1.25 px-5;
+      @apply shadow-lg border rounded-b-md border-black/15;
+      @apply bg-white text-(--normal-text-color);
+
+      & ul {
+        --left-indent:1.875rem;
+        
+        @apply flex flex-col;
+
+        & ul {
+          --left-indent:3.75rem;
+        }
+      }
+
+      & a {
+        @apply block py-(--vertical-indent) pl-(--left-indent) whitespace-nowrap;
+
+        &:hover {
+          @apply bg-(--hover-background-color);
+        }
+      }
+
+      & p {
+        @apply py-(--vertical-indent) pl-(--left-indent) whitespace-nowrap;
+        @apply text-(--head-text-color) small-caps text-[0.75rem];
+      }
+
+      & li.active {
+        & > a {
+          @apply bg-(--active-background-color) text-(--active-text-color);
+        }
+      }
+    }
+  }
+
+  nav.left-menu > ul {
+
+    --normal-text-color: #666;
+    --head-text-color: #767676;
+    --active-color: #1a5ecd;
+    --hover-background-color: #e8e8e8;
+
+    --left-indent: 0.9375rem;
+    --vertical-indent: 0.3125rem;
+    --right-indent: 0.9375rem;
+
+    & ul {
+      --left-indent:1.875rem;
+      --vertical-indent: 0.25rem;
+
+      & ul {
+        --left-indent:2.8125rem;
+        --vertical-indent: 0.125rem;
+      }
+    }
+
+    @apply wrap-break-word text-[0.8125rem] text-(--normal-text-color);
+
+    & a {
+      @apply block py-(--vertical-indent) pl-(--left-indent) pr-(--right-indent);
+
+      &:hover {
+        @apply text-(--active-color) bg-(--hover-background-color);
+      }
+
+      .active > & {
+        @apply text-(--active-color) font-bold;
+        border-right: var(--active-color) 2px solid;
+      }
+    }
+
+    & p {
+      @apply py-(--vertical-indent) pl-(--left-indent) pr-(--right-indent) small-caps text-[0.75rem] text-(--head-text-color);
+    }
+  }
+}

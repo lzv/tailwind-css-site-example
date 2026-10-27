@@ -1,0 +1,59 @@
+@plugin "@tailwindcss/typography";
+
+@utility prose-corrections {
+
+  --link-color: #337ab7;
+  
+  @apply text-sm text-site-text-color;
+
+  p, pre {
+      @apply my-0;
+  }
+
+  p + p {
+      @apply mt-2.5;
+  }
+  p + pre, pre + p, pre + pre {
+      @apply mt-6;
+  }
+
+  p {
+    @apply leading-[1.42857143];
+
+    &:has(img) {
+      @apply text-center;
+      & img {
+        @apply inline-block my-3;
+      }
+    }
+  }
+
+  pre {
+    @apply p-3.25 text-site-text-color bg-[#f5f2f0] text-sm font-mono;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-normal;
+  }
+
+  h1 {
+    @apply text-[2.25rem] mt-3.75 mb-2.5;
+  }
+
+  h2 {
+    @apply text-[1.875rem] mt-5 mb-2.5;
+  }
+
+  h3 {
+    @apply text-[1.5rem] mt-5 mb-2.5;
+  }
+
+  a {
+    @apply text-(--link-color) no-underline;
+    &:hover {
+      @apply underline;
+    }
+  } 
+}
