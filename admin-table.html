@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en" class="overflow-y-scroll">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Админка - таблица со списком элементов</title>
+</head>
+
+<body>
+  <div class="flex flex-col min-h-screen w-292.5 mx-auto bg-white">
+
+    <header class="text-center text-[4.375rem] text-white bg-[#aaa]">
+      <a href="/admin">Админка</a>
+    </header>
+
+    <div class="h-10 py-0.75 text-right pr-3.75 content-center">
+      Добро пожаловать, lzv <a href="/" class="btn btn-sm font-normal text-sm ml-2 border-[#ccc] not-[&:hover]:bg-transparent">Выход</a><a href="/" class="btn btn-sm font-normal text-sm ml-1 border-[#ccc] not-[&:hover]:bg-transparent">На сайт</a>
+    </div>
+
+    <div class="shrink-0 grow flex flex-row items-stretch">
+
+      <aside class="w-69.5 shrink-0">
+        <ul class="menu">
+          <li><a href="/admin-main.html">Главная</a></li>
+          <li class="active"><a href="/admin-table.html">Таблица</a></li>
+        </ul>
+      </aside>
+
+      <main class="px-7.5 grow min-w-0 pb-8">
+        <h1 class="text-[2.25rem] mt-3.75 mb-5.5 leading-[1.1]">Таблица со списком элементов</h1>
+        <p class="text-[#8a6d3b] mt-2.5">Внимание! В коде CSS поддерживается только 3-уровневое меню</p>
+        <p class="mt-2.5"><a class="btn btn-sm text-sm btn-success font-normal">Добавить пункт меню</a></p>
+        <p class="mt-2.5">Всего <b>81</b> запись.</p>
+
+        <div role="alert" class="alert alert-info mt-2.5">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="24" height="24" class="h-6 w-6 shrink-0 stroke-current">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <span>Информация для пользователя</span>
+        </div>
+
+        <div role="alert" class="alert alert-success mt-2.5">
+          <svg xmlns=" http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24" width="24" height="24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>Сообщение о успешном действии</span>
+        </div>
+
+        <div role="alert" class="alert alert-warning mt-2.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24" width="24" height="24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+          <span>Сообщение с предупреждением</span>
+        </div>
+
+        <div role="alert" class="alert alert-error mt-2.5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24" width="24" height="24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>Сообщение о ошибке</span>
+        </div>
+
+        <div class="overflow-x-auto mt-2.5">
+          <table class="table table-zebra-odd [&_td,&_th]:border [&_thead_th]:border-b-2 [&_tr]:border-none border-none rounded-none [&_td,&_th]:border-[#ddd] [&_td,&_th]:text-site-text-color [&_td,&_th]:py-2 [&_td,&_th]:px-3">
+            <!-- head -->
+            <thead>
+              <tr>
+                <th>Name <svg class="inline-block size-4.5 align-middle relative top-[-0.0625rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m3 8 4-4 4 4" />
+                    <path d="M7 4v16" />
+                    <path d="M15 4h5l-5 6h5" />
+                    <path d="M15 20v-3.5a2.5 2.5 0 0 1 5 0V20" />
+                    <path d="M20 18h-5" />
+                  </svg>
+                </th>
+                <th><a href="">Job</a>
+                  <svg class="inline-block size-4.5 align-middle relative top-[-0.0625rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m3 16 4 4 4-4" />
+                    <path d="M7 20V4" />
+                    <path d="M20 8h-5" />
+                    <path d="M15 10V6.5a2.5 2.5 0 0 1 5 0V10" />
+                    <path d="M15 14h5l-5 6h5" />
+                  </svg>
+                  <svg class="inline-block size-4.5 align-middle relative top-[-0.0625rem]" xmlns="http://w3.org" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- Стрелка вниз -->
+                    <path d="M3 16l4 4 4-4" />
+                    <path d="M7 20V4" />
+                    <!-- Цифра 1 (сверху) -->
+                    <path d="M17 10V4h-2" />
+                    <path d="M15 10h4" />
+                    <!-- Девять (снизу) -->
+                    <circle cx="17" cy="15" r="2" />
+                    <path d="M19 15v3a2 2 0 0 1-2 2h-2" />
+                  </svg>
+                  <svg class="inline-block size-4.5 align-middle relative top-[-0.0625rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- Стрелка вверх -->
+                    <path d="m3 8 4-4 4 4" />
+                    <path d="M7 4v16" />
+                    <!-- 9 (сверху) -->
+                    <circle cx="17" cy="6" r="2" />
+                    <path d="M19 6v3a2 2 0 0 1-2 2h-2" />
+                    <!-- 1 (снизу) -->
+                    <path d="M17 20v-6h-2" />
+                    <path d="M15 20h4" />
+                  </svg>
+                </th>
+                <th>Favorite Color</th>
+              </tr>
+              <tr>
+                <th><input data="list-filter" name="User[ID]" type="number" class="input input-sm input-success no-spin" placeholder="Число" value="555" /></th>
+                <th><input data="list-filter" name="User[email]" type="email" class="input input-sm input-neutral validator" placeholder="Email" /></th>
+                <th><input data="list-filter" name="User[Text]" type="text" class="input input-sm input-error" placeholder="Текст" /></th>
+              </tr>
+              <tr>
+                <th>
+                  <select name="User[Sel1]" data="list-filter" class="select select-sm select-success">
+                    <option value=""></option>
+                    <option value="0">Crimson</option>
+                    <option value="1">Amber</option>
+                  </select>
+                </th>
+                <th>
+                  <select name="User[Sel2]" data="list-filter" class="select select-sm select-neutral">
+                    <option value=""></option>
+                    <option value="0">Crimson</option>
+                    <option value="1">Amber</option>
+                  </select>
+                </th>
+                <th>
+                  <select name="User[Sel3]" data="list-filter" class="select select-sm select-error">
+                    <option value=""></option>
+                    <option value="0">Crimson</option>
+                    <option value="1">Amber</option>
+                  </select>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Cy Ganderton</td>
+                <td>Quality Control Specialist</td>
+                <td>Blue</td>
+              </tr>
+              <tr>
+                <td><span class="text-[#77f] inline-block leading-none align-middle relative -top-0.5">
+                    <svg xmlns=" http://www.w3.org/2000/svg" viewBox="0 0 12 24" width="12" height="24" fill="currentColor" class="w-2.5 h-5">
+                      <path d="M2.25 4v16l9.5-8z" />
+                    </svg>
+                  </span> Hart Hagerty</td>
+                <td>Desktop Support Technician Desktop Support Technician Desktop Support Technician Desktop Support Technician</td>
+                <td>Purple</td>
+              </tr>
+              <tr>
+                <td><span class="text-[#77f] inline-block leading-none align-middle relative -top-0.5">
+                    <svg xmlns=" http://www.w3.org/2000/svg" viewBox="0 0 12 24" width="12" height="24" fill="currentColor" class="w-2.5 h-5">
+                      <path d="M2.25 4v16l9.5-8z" />
+                    </svg>
+                  </span>
+                  <span class="text-[#77f] inline-block leading-none align-middle relative -top-0.5">
+                    <svg xmlns=" http://www.w3.org/2000/svg" viewBox="0 0 12 24" width="12" height="24" fill="currentColor" class="w-2.5 h-5">
+                      <path d="M2.25 4v16l9.5-8z" />
+                    </svg>
+                  </span>
+                  <span class="text-[#77f] inline-block leading-none align-middle relative -top-0.5">
+                    <svg xmlns=" http://www.w3.org/2000/svg" viewBox="0 0 12 24" width="12" height="24" fill="currentColor" class="w-2.5 h-5">
+                      <path d="M2.25 4v16l9.5-8z" />
+                    </svg>
+                  </span> Brice Brice
+                </td>
+                <td>Tax Accountant</td>
+                <td><a href="/" class="inline-block relative top-[0.09375rem]" title="Просмотр">
+                    <svg class="size-3.75" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="24" height="24">
+                      <path fill="currentColor" d="M573 241C518 136 411 64 288 64S58 136 3 241a32 32 0 000 30c55 105 162 177 285 177s230-72 285-177a32 32 0 000-30zM288 400a144 144 0 11144-144 144 144 0 01-144 144zm0-240a95 95 0 00-25 4 48 48 0 01-67 67 96 96 0 1092-71z"></path>
+                    </svg>
+                  </a> <a href="/" class="inline-block relative top-[0.09375rem]" title="Редактировать">
+                    <svg class="size-3.75" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="24" height="24">
+                      <path fill="currentColor" d="M498 142l-46 46c-5 5-13 5-17 0L324 77c-5-5-5-12 0-17l46-46c19-19 49-19 68 0l60 60c19 19 19 49 0 68zm-214-42L22 362 0 484c-3 16 12 30 28 28l122-22 262-262c5-5 5-13 0-17L301 100c-4-5-12-5-17 0zM124 340c-5-6-5-14 0-20l154-154c6-5 14-5 20 0s5 14 0 20L144 340c-6 5-14 5-20 0zm-36 84h48v36l-64 12-32-31 12-65h36v48z"></path>
+                    </svg>
+                  </a> <a href="/" class="inline-block relative top-[0.09375rem]" title="Удалить" data-confirm="Вы уверены, что хотите удалить этот элемент?" data-method="post">
+                    <svg class="size-3.75" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24">
+                      <path fill="currentColor" d="M32 464a48 48 0 0048 48h288a48 48 0 0048-48V128H32zm272-256a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zm-96 0a16 16 0 0132 0v224a16 16 0 01-32 0zM432 32H312l-9-19a24 24 0 00-22-13H167a24 24 0 00-22 13l-9 19H16A16 16 0 000 48v32a16 16 0 0016 16h416a16 16 0 0016-16V48a16 16 0 00-16-16z"></path>
+                    </svg>
+                  </a></td>
+              </tr>
+              <tr>
+                <td>Cy Ganderton</td>
+                <td>123</td>
+                <td>Blue</td>
+              </tr>
+              <tr>
+                <td>Hart Hagerty</td>
+                <td><a href="">Desktop Support Technician</a></td>
+                <td>Purple</td>
+              </tr>
+              <tr>
+                <td>Brice Swyre</td>
+                <td>Tax Accountant</td>
+                <td>Red</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="join pagination mt-6">
+          <p class="join-item disabled">&laquo;</p>
+          <a class="join-item" href="#">1</a>
+          <p class="join-item active">2</p>
+          <a class="join-item" href="#">3</a>
+          <a class="join-item" href="#">4</a>
+          <a class="join-item" href="#">&raquo;</a>
+        </div>
+
+      </main>
+    </div>
+
+    <footer class="footer footer-center bg-base-200 text-base-content h-14 p-1 border-t border-t-solid border-t-[#ddd]">
+      <aside>
+        <p>
+          ©LzV Все права на контент сайта и его исходный код принадлежат исключительно автору сайта.<br />
+          Разрешается цитирование контента с обязательным указанием ссылки на сайт.
+        </p>
+      </aside>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/admin.js"></script>
+  <script type="module" src="/src/admin-table.js"></script>
+</body>
+
+</html>

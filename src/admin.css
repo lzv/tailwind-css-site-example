@@ -17,6 +17,10 @@
   --left-menu-normal-text-color: #767676;
   --left-menu-active-text-color: #1a5ecd;
   --left-menu-hover-text-color: #1a5ecd;
+
+  /* Цвета daisyUI */
+  --color-success:#5cb85c;
+  --color-success-content:#fff;
 }
 
 @utility border-t-* {
@@ -107,6 +111,37 @@
     --color-neutral: #66afe9;
     @apply outline-0;
     box-shadow: inset 0 1px 1px color-mix(in srgb, #000 7.5%, transparent), 0 0 8px color-mix(in srgb, var(--input-color) 60%, transparent);
+  }
+}
+
+@utility pagination {
+
+  --active-text-color: #fff;
+  --active-background-color: #337ab7;
+  --hover-background-color: #eeeeee;
+
+  & > a, & > p {
+    @apply block size-8 font-normal content-center text-center border-[#ddd];
+  }
+
+  & > p {
+    @apply cursor-default;
+
+    &.disabled {
+      @apply cursor-not-allowed;
+    }
+
+    &.active {
+      @apply text-(--active-text-color) bg-(--active-background-color);
+    }
+  }
+
+  & > a {
+    @apply cursor-pointer no-underline;
+
+    &:hover {
+      @apply no-underline bg-(--hover-background-color);
+    }
   }
 }
 
