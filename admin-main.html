@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" class="overflow-y-scroll">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Админка - основная страница</title>
+</head>
+
+<body>
+  <div class="flex flex-col min-h-screen w-292.5 mx-auto bg-white">
+
+    <header class="text-center text-[4.375rem] text-white bg-[#aaa]">
+      <a href="/admin">Админка</a>
+    </header>
+
+    <div class="h-10 py-0.75 text-right pr-3.75 content-center">
+      Добро пожаловать, lzv <a href="/" class="btn btn-sm font-normal text-sm ml-2 border-[#ccc] not-[&:hover]:bg-transparent">Выход</a><a href="/" class="btn btn-sm font-normal text-sm ml-1 border-[#ccc] not-[&:hover]:bg-transparent">На сайт</a>
+    </div>
+
+    <div class="shrink-0 grow flex flex-row items-stretch">
+
+      <aside class="w-69.5 shrink-0">
+        <ul class="menu">
+          <li class="active"><a href="/admin-main.html">Главная</a></li>
+          <li><a href="/admin-table.html">Таблица</a></li>
+        </ul>
+      </aside>
+
+      <main class="px-7.5 grow min-w-0 pb-8">
+        <h1 class="text-[2.25rem] mt-3.75 mb-5.5 leading-[1.1]">Добро пожаловать!</h1>
+        <p class="mt-2.5">Это главная страница админки.</p>
+      </main>
+    </div>
+
+    <footer class="footer footer-center bg-base-200 text-base-content h-14 p-1 border-t border-t-solid border-t-[#ddd]">
+      <aside>
+        <p>
+          ©LzV Все права на контент сайта и его исходный код принадлежат исключительно автору сайта.<br />
+          Разрешается цитирование контента с обязательным указанием ссылки на сайт.
+        </p>
+      </aside>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/admin.js"></script>
+</body>
+
+</html>

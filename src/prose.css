@@ -1,6 +1,8 @@
 @plugin "@tailwindcss/typography";
 
-@utility prose-corrections {
+/* Если использовать @utility, стили генерируются раньше, чем стили из typography, и соответственно, проигрывают. 
+   Для преодоления специфичности нужно использовть простой класс. */
+.prose-corrections {
 
   --link-color: #337ab7;
   
