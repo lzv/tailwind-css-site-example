@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en" class="overflow-y-scroll">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Админка - страница редактирования элемента</title>
+</head>
+
+<body>
+  <div class="flex flex-col min-h-screen w-292.5 mx-auto bg-white">
+
+    <header class="text-center text-[4.375rem] text-white bg-[#aaa]">
+      <a href="/admin">Админка</a>
+    </header>
+
+    <div class="h-10 py-0.75 text-right pr-3.75 content-center">
+      Добро пожаловать, lzv <a href="/" class="btn btn-sm font-normal text-sm ml-2 border-[#ccc] not-[&:hover]:bg-transparent">Выход</a><a href="/" class="btn btn-sm font-normal text-sm ml-1 border-[#ccc] not-[&:hover]:bg-transparent">На сайт</a>
+    </div>
+
+    <div class="shrink-0 grow flex flex-row items-stretch">
+
+      <aside class="w-69.5 shrink-0">
+        <ul class="menu">
+          <li class=""><a href="/admin-main.html">Главная</a></li>
+          <li><a href="/admin-table.html">Таблица</a></li>
+          <li class=""><a href="/admin-detail.html">Детальный просмотр</a></li>
+          <li class="active"><a href="/admin-edit.html">Редактирование</a></li>
+        </ul>
+      </aside>
+
+      <main class="px-7.5 grow min-w-0 pb-8">
+        <h1 class="text-[2.25rem] mt-3.75 mb-5.5 leading-[1.1]">Страница редактирования элемента</h1>
+
+        <form action="/" method="post">
+          <fieldset class="fieldset group">
+            <legend class="fieldset-legend text-sm group-has-required:after:content-['*'] group-has-required:after:text-red-500">Обязательное поле</legend>
+            <input type="text" class="input input-neutral validator" name="var1" required placeholder="Type here" />
+            <p class="validator-hint hidden text-sm mt-0">Поле не может быть пустым</p>
+          </fieldset>
+          <fieldset class="fieldset group">
+            <legend class="fieldset-legend text-sm group-has-required:after:content-['*'] group-has-required:after:text-red-500">Необязательное поле</legend>
+            <input type="text" class="input input-neutral validator" name="var2" placeholder="Type here" />
+            <p class="validator-hint hidden text-sm mt-0">Поле не может быть пустым</p>
+          </fieldset>
+          <fieldset class="fieldset group">
+            <legend class="fieldset-legend text-sm group-has-required:after:content-['*'] group-has-required:after:text-red-500">Обязательное многострочное поле</legend>
+            <textarea class="textarea textarea-neutral h-24 validator" required placeholder="Type here"></textarea>
+            <p class="validator-hint hidden text-sm mt-0">Поле не может быть пустым</p>
+          </fieldset>
+          <fieldset class="fieldset group">
+            <legend class="fieldset-legend text-sm group-has-required:after:content-['*'] group-has-required:after:text-red-500">Необязательное многострочное поле</legend>
+            <textarea class="textarea textarea-neutral h-24 validator" placeholder="Type here"></textarea>
+            <p class="validator-hint hidden text-sm mt-0">Поле не может быть пустым</p>
+          </fieldset>
+          <fieldset class="fieldset group">
+            <legend class="fieldset-legend text-sm group-has-required:after:content-['*'] group-has-required:after:text-red-500">Необязательное значение со списком</legend>
+            <select class="select select-neutral validator">
+              <option value=""></option>
+              <option>Chrome</option>
+              <option>FireFox</option>
+              <option>Safari</option>
+            </select>
+            <p class="validator-hint hidden text-sm mt-0">Поле не может быть пустым</p>
+          </fieldset>
+          <fieldset class="fieldset group">
+            <legend class="fieldset-legend text-sm group-has-required:after:content-['*'] group-has-required:after:text-red-500">Обязательное значение со списком</legend>
+            <select class="select select-neutral validator" required>
+              <option value=""></option>
+              <option>Chrome</option>
+              <option>FireFox</option>
+              <option>Safari</option>
+            </select>
+            <p class="validator-hint hidden text-sm mt-0">Поле не может быть пустым</p>
+          </fieldset>
+          <fieldset class="fieldset [&_.tox-editor-container_.tox-promotion]:hidden">
+            <legend class="fieldset-legend text-sm">Текст с редактором</legend>
+            <textarea class="tinymce-editor h-50">&lt;h1&gt;Персонажи&lt;/h1&gt;
+&lt;p&gt;Персонажы существуют двух видов&amp;nbsp;- это управляемый игроком персонаж, и&amp;nbsp;его враги. У&amp;nbsp;них много общего, но&amp;nbsp;конечно есть разница.&lt;/p&gt;
+&lt;p&gt;В&amp;nbsp;основном все&amp;nbsp;параметры сразу читаются из&amp;nbsp;БД и&amp;nbsp;записываются в&amp;nbsp;БД, за&amp;nbsp;редким исключением. Так&amp;nbsp;же можно сохранять в&amp;nbsp;членах класса значения, которые не&amp;nbsp;будут меняться.&lt;/p&gt;
+&lt;pre class=&quot;language-cpp&quot;&gt;&lt;code&gt;class MapActor : public Node
+{
+public:
+    virtual bool init (
+        const std::string &amp;amp; sprite_file_name,
+        const std::string &amp;amp; current_weapon_code,
+        bool need_hits_line
+    );
+
+    const float _base_speed;          // Базовая скорость, пикселей в секунду.
+    PlayScreen * const _main_screen;  // Для доступа к другим объектам.
+    BoolBitMap _bit_map;
+    unsigned int _bit_map_width = 0;
+    unsigned int _bit_map_height = 0;
+    CharWeapon * _current_weapon = nullptr;
+};
+
+class Enemy : public MapActor
+{
+public:
+    static Enemy * create (const EnemyDBParams &amp;amp; params, PlayScreen * screen);
+    bool init (const EnemyDBParams &amp;amp; params);
+
+    virtual void set_position (float x, float y) override;
+    virtual void set_position (const Vec2 &amp;amp; position) override;
+
+protected:
+    Enemy (PlayScreen * screen);
+    virtual ~Enemy ();
+};
+
+class Character : public MapActor
+{
+public:
+    static Character * create (PlayScreen * screen);
+    bool init ();
+
+protected:
+    Character (PlayScreen * screen);
+    virtual ~Character () = default;
+
+    unsigned int xp_to_next_level = 0;
+
+    DELETE_COPY_AND_MOVE(Character);
+};&lt;/code&gt;&lt;/pre&gt;</textarea>
+            <p class="label">Можно вставлять ссылки на <strong>абсолютный</strong> маршрут: [link#Текст&nbsp;ссылки#page/page|id=code|val=var]. Этот код будет заменен на тег&nbsp;&lt;a&gt;.</p>
+          </fieldset>
+          <fieldset class="fieldset [&_.tox-editor-container_.tox-promotion]:hidden">
+            <legend class="fieldset-legend text-sm">Второй текст с редактором</legend>
+            <textarea class="tinymce-editor h-50">&lt;h1&gt;Персонажи&lt;/h1&gt;
+&lt;p&gt;Персонажы существуют двух видов&amp;nbsp;- это управляемый игроком персонаж, и&amp;nbsp;его враги. У&amp;nbsp;них много общего, но&amp;nbsp;конечно есть разница.&lt;/p&gt;
+&lt;p&gt;В&amp;nbsp;основном все&amp;nbsp;параметры сразу читаются из&amp;nbsp;БД и&amp;nbsp;записываются в&amp;nbsp;БД, за&amp;nbsp;редким исключением. Так&amp;nbsp;же можно сохранять в&amp;nbsp;членах класса значения, которые не&amp;nbsp;будут меняться.&lt;/p&gt;
+&lt;pre class=&quot;language-cpp&quot;&gt;&lt;code&gt;class MapActor : public Node
+{
+public:
+    virtual bool init (
+        const std::string &amp;amp; sprite_file_name,
+        const std::string &amp;amp; current_weapon_code,
+        bool need_hits_line
+    );
+
+    const float _base_speed;          // Базовая скорость, пикселей в секунду.
+    PlayScreen * const _main_screen;  // Для доступа к другим объектам.
+    BoolBitMap _bit_map;
+    unsigned int _bit_map_width = 0;
+    unsigned int _bit_map_height = 0;
+    CharWeapon * _current_weapon = nullptr;
+};
+&lt;/code&gt;&lt;/pre&gt;</textarea>
+            <p class="label">Можно вставлять ссылки на <strong>абсолютный</strong> маршрут: [link#Текст&nbsp;ссылки#page/page|id=code|val=var]. Этот код будет заменен на тег&nbsp;&lt;a&gt;.</p>
+          </fieldset>
+          <fieldset class="fieldset">
+            <legend class="fieldset-legend text-sm"> Картинки и код для вставки</legend>
+            <div>
+              <select class="select select-neutral w-110" id="images-selector">
+                <option value=""></option>
+                <option value="36">Скриншот 1</option>
+                <option value="37">Скриншот 2</option>
+                <option value="38">Скриншот 3</option>
+                <option value="39">Скриншот 4</option>
+                <option value="40">Скриншот 5</option>
+              </select>
+              <input type="text" class="input input-neutral w-30" id="images-selector-target" value="" />
+            </div>
+            <script>
+              document.getElementById("images-selector").addEventListener("change", function () {
+                document.getElementById("images-selector-target").value = `[image#${this.value}]`;
+              });
+            </script>
+          </fieldset>
+          <fieldset class="fieldset group">
+            <legend class="fieldset-legend text-sm group-has-required:after:content-['*'] group-has-required:after:text-red-500">Галочки</legend>
+            <label class="label font-bold text-sm text-site-text-color">
+              <input type="checkbox" checked="checked" class="checkbox checkbox-sm before:duration-0 before:delay-0" /> Remember me
+            </label>
+            <label class="label font-bold text-sm text-site-text-color">
+              <input type="checkbox" checked="checked" class="checkbox checkbox-sm before:duration-0 before:delay-0" /> Remember me
+            </label>
+            <p class="label ml-7 mb-1 leading-[1.1]">Комментарий под галочкой</p>
+            <label class="label font-bold text-sm text-site-text-color">
+              <input type="checkbox" checked="checked" class="checkbox checkbox-sm before:duration-0 before:delay-0" /> Remember me
+            </label>
+          </fieldset>
+          <fieldset class="fieldset group">
+            <legend class="fieldset-legend text-sm group-has-required:after:content-['*'] group-has-required:after:text-red-500">Необязательная загрузка файла</legend>
+            <input type="file" class="file-input file-input-neutral validator" />
+            <label class="label">Max size 8MB</label>
+            <p class="validator-hint hidden text-sm mt-0">Необходимо выбрать файл</p>
+          </fieldset>
+          <fieldset class="fieldset group">
+            <legend class="fieldset-legend text-sm group-has-required:after:content-['*'] group-has-required:after:text-red-500">Обязательная загрузка файла</legend>
+            <input type="file" class="file-input file-input-neutral validator" required />
+            <label class="label">Max size 8MB</label>
+            <p class="validator-hint hidden text-sm mt-0">Необходимо выбрать файл</p>
+          </fieldset>
+          <p class="mt-4"><button class="btn btn-sm btn-primary text-sm font-normal">Сохранить</button><a href="/" class="btn btn-sm text-sm font-normal ml-1 btn-neutral border-[#adadad]">Отмена</a></p>
+        </form>
+
+      </main>
+    </div>
+
+    <footer class="footer footer-center bg-base-200 text-base-content h-14 p-1 border-t border-t-solid border-t-[#ddd]">
+      <aside>
+        <p>
+          ©LzV Все права на контент сайта и его исходный код принадлежат исключительно автору сайта.<br />
+          Разрешается цитирование контента с обязательным указанием ссылки на сайт.
+        </p>
+      </aside>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/admin.js"></script>
+  <script type="module" src="/src/admin-edit.js"></script>
+</body>
+
+</html>
