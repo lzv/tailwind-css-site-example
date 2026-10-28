@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" class="overflow-y-scroll">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Админка - страница с детальным просмотром элемента</title>
+</head>
+
+<body>
+  <div class="flex flex-col min-h-screen w-292.5 mx-auto bg-white">
+
+    <header class="text-center text-[4.375rem] text-white bg-[#aaa]">
+      <a href="/admin">Админка</a>
+    </header>
+
+    <div class="h-10 py-0.75 text-right pr-3.75 content-center">
+      Добро пожаловать, lzv <a href="/" class="btn btn-sm font-normal text-sm ml-2 border-[#ccc] not-[&:hover]:bg-transparent">Выход</a><a href="/" class="btn btn-sm font-normal text-sm ml-1 border-[#ccc] not-[&:hover]:bg-transparent">На сайт</a>
+    </div>
+
+    <div class="shrink-0 grow flex flex-row items-stretch">
+
+      <aside class="w-69.5 shrink-0">
+        <ul class="menu">
+          <li class=""><a href="/admin-main.html">Главная</a></li>
+          <li><a href="/admin-table.html">Таблица</a></li>
+          <li class="active"><a href="/admin-detail.html">Детальный просмотр</a></li>
+          <li class=""><a href="/admin-edit.html">Редактирование</a></li>
+        </ul>
+      </aside>
+
+      <main class="px-7.5 grow min-w-0 pb-8">
+        <h1 class="text-[2.25rem] mt-3.75 mb-5.5 leading-[1.1]">Детальный просмотр элемента</h1>
+        <p class="mt-2.5"><a class="btn btn-sm btn-primary text-sm font-normal">Редактировать</a> <a class="btn btn-sm btn-secondary text-sm font-normal" data-confirm="Действительно удалить?">Удалить</a> <a class="btn btn-sm btn-primary text-sm font-normal">Перейти к списку</a></p>
+
+        <table class="table table-zebra-odd mt-5 detail-table">
+          <tbody>
+            <tr>
+              <th>Код</th>
+              <td>code/subcode</td>
+            </tr>
+            <tr>
+              <th>Meta ключевые слова</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Meta ключевые слова en</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Meta описание</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Meta описание en</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Meta заголовок страницы</th>
+              <td>Это заголовок страницы</td>
+            </tr>
+            <tr>
+              <th>Meta заголовок страницы en</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Количество просмотров</th>
+              <td>849</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="prose prose-sm prose-corrections max-w-none">
+          <h1>Это заголовок страницы</h1>
+          <p>Разнообразный и структурированный подход к формированию визуальной среды позволяет детально оценить особенности пространственного расположения контента, учитывая <a href="/">ссылку в тексте</a>. Перспективное планирование и последовательное внедрение инновационных решений обеспечивают оптимальную плотность заполнения текстовых блоков на странице. Качественная проработка типографики требует комплексного анализа каждого элемента структуры.</p>
+          <p><img src="/medium_img.png" /></p>
+          <h3>Подзаголовок</h3>
+          <p>Разнообразный и структурированный подход к формированию визуальной среды позволяет детально оценить особенности пространственного расположения контента, учитывая <a href="/">ссылку в тексте</a>. Перспективное планирование и последовательное внедрение инновационных решений обеспечивают оптимальную плотность заполнения текстовых блоков на странице. Качественная проработка типографики требует комплексного анализа каждого элемента структуры.</p>
+        </div>
+
+        <hr class="my-5" />
+
+        <h2 class="text-[1.875rem] mt-5 mb-4">Исходный код контента</h2>
+        <pre class="bg-[#f5f5f5] max-w-full overflow-y-auto p-3 whitespace-pre-wrap"><code>&lt;h1&gt;Это заголовок страницы&lt;/h1&gt;
+&lt;p&gt;Разнообразный и структурированный подход к формированию визуальной среды позволяет детально оценить особенности пространственного расположения контента, учитывая &lt;a href=&quot;/&quot;&gt;ссылку в тексте&lt;/a&gt;. Перспективное планирование и последовательное внедрение инновационных решений обеспечивают оптимальную плотность заполнения текстовых блоков на странице. Качественная проработка типографики требует комплексного анализа каждого элемента структуры.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/medium_img.png&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Подзаголовок&lt;/h3&gt;
+&lt;p&gt;Разнообразный и структурированный подход к формированию визуальной среды позволяет детально оценить особенности пространственного расположения контента, учитывая &lt;a href=&quot;/&quot;&gt;ссылку в тексте&lt;/a&gt;. Перспективное планирование и последовательное внедрение инновационных решений обеспечивают оптимальную плотность заполнения текстовых блоков на странице. Качественная проработка типографики требует комплексного анализа каждого элемента структуры.&lt;/p&gt;</code></pre>
+
+        <h2 class="text-[1.875rem] mt-5 mb-4">Исходный код en контента</h2>
+        <pre class="bg-[#f5f5f5] max-w-full overflow-y-auto p-3 whitespace-pre-wrap"><code>&nbsp;</code></pre>
+
+      </main>
+    </div>
+
+    <footer class="footer footer-center bg-base-200 text-base-content h-14 p-1 border-t border-t-solid border-t-[#ddd]">
+      <aside>
+        <p>
+          ©LzV Все права на контент сайта и его исходный код принадлежат исключительно автору сайта.<br />
+          Разрешается цитирование контента с обязательным указанием ссылки на сайт.
+        </p>
+      </aside>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/admin.js"></script>
+</body>
+
+</html>

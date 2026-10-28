@@ -21,6 +21,10 @@
   /* Цвета daisyUI */
   --color-success:#5cb85c;
   --color-success-content:#fff;
+  --color-primary: #337ab7;
+  --color-primary-content: #fff;
+  --color-secondary: #d9534f;
+  --color-secondary-content: #fff;
 }
 
 @utility border-t-* {
@@ -142,6 +146,18 @@
     &:hover {
       @apply no-underline bg-(--hover-background-color);
     }
+  }
+}
+
+@utility detail-table {
+  & td, & th {
+    border: 1px solid #ddd;
+    vertical-align: top;
+    padding: 0.5rem;
+  }
+  & th {
+    width: 1%;
+    white-space: nowrap;
   }
 }
 
